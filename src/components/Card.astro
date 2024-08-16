@@ -1,61 +1,20 @@
----
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+<article class="flex flex-col gap-6 mx-5 border-tertiary border-2 rounded-[20px] bg-white shadow-[6px_9px_0px_rgba(0,0,0,1)] p-6 max-w-[327px] max-h-[522px] md:max-w-[387px]">
+	<img src="/illustration-article.svg" alt="" class="rounded-[10px] max-w-[336px]">
 
-const { href, title, body } = Astro.props;
----
+	<section class="flex flex-col gap-3">
+		<div class="py-0.5 px-3 bg-primary rounded-[4px] w-fit font-bold">
+			<p>Learning</p>
+		</div>
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+		<p class="font-semibold">Published 21 Dec 2023</p>
+
+		<h1 class="font-bold text-2xl transition-all duration-300 cursor-pointer hover:text-primary">HTML & CSS foundations</h1>
+
+		<p class="text-secondary">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+	</section>
+	
+	<footer class="flex items-center gap-3">
+		<img src="/image-avatar.webp" alt="Thumbnail of author" class="w-8">
+		<p class="font-bold text-lg">Greg Hooper</p>
+	</footer>
+</article>
